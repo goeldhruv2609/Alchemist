@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infinite Plane with Colliding Boxes</title>
+  <style>
+    /* Basic reset and layout */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+    /* Left column for draggable boxes and controls */
+    .columns {
+      width: 200px;
+      background: #f0f0f0;
+      padding: 10px;
+      border-right: 1px solid #ccc;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .box {
+      background: #ff6f61;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      cursor: move;
+      border: 1px solid #333;
+      user-select: none;
+    }
+    button {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    /* Canvas occupies the rest of the space */
+    #infinitePlane {
+      flex: 1;
+      background: #fff;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="columns">
+    <div class="box" draggable="true">Box 1</div>
+    <div class="box" draggable="true">Box 2</div>
+    <button id="clearBoxes">Clear All Boxes</button>
+  </div>
+  <canvas id="infinitePlane"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
